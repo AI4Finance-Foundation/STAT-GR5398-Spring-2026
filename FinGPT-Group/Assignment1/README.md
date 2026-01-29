@@ -56,26 +56,29 @@ Mathematically, we can split the original model (here we use **Transformer** as 
 ```
 
 Commonly, when we are doing LoRA, we want to fine-tune the pre-trained weight matrices $W_0\in\mathbb{R}^{d \times k}$. However, instead of directly updating these matrices, we add an additional low-rank matrix just behind each weight matrices, and we only train these additional matrices:
-$
+
+```math
 \Delta W = B A,\\
 W = W_0 + \alpha \cdot B A = W_0 + \alpha \Delta W, \\
 A \in \mathbb{R}^{r \times k}, B \in \mathbb{R}^{d \times r}, \text{where }r << min(d, k)
-$
+```
+
 and $\alpha$ is a scaling factor controlling the magnitude of the update.
+
 
 + Self-Attention Layer:
 
   In each self-attention layers, we calculate:
   
-  $$
-  \begin{aligned}
-  Q &= X W_Q, \\
-  K &= X W_K, \\
-  V &= X W_V, \\
-  \text{Attention}(Q, K, V) &= \mathrm{softmax}\!\left( \frac{Q K^{\top}}{\sqrt{d_k}} \right) V\\
-  \text{Output} &= \text{Attention}(Q, K, V)W_O
-  \end{aligned}
-  $$
+$$
+\begin{aligned}
+Q &= X W_Q, \\
+K &= X W_K, \\
+V &= X W_V, \\
+\text{Attention}(Q, K, V) &= \mathrm{softmax}\ \left( \frac{Q K^{\top}}{\sqrt{d_k}} \right) V\\
+\text{Output} &= \text{Attention}(Q, K, V)W_O
+\end{aligned}
+$$
   
   Here we have 4 pre-trained weight matrices $W_Q$, $W_K$, $W_V$, $W_O$, where we most likely to insert additional matrices.
 
@@ -83,9 +86,9 @@ and $\alpha$ is a scaling factor controlling the magnitude of the update.
 
   In feed-forward layers, we calculate:
   
-  $$
-  FFN(x)=\sigma(xW_1+b_1)W_2+b_2,
-  $$
+$$
+FFN(x)=\sigma(xW_1+b_1)W_2+b_2,
+$$
   
   where we get 2 pre-trained weight matrices $W_1$ and $W_2$ that we can insert additional matrices into.
 
