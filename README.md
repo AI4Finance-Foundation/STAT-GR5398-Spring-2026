@@ -160,7 +160,7 @@ This course is ideal for students who:
   https://ma.stat.columbia.edu/stat-gr5398-ma-mentored-research/
 
 - Course GitHub (Spring 2026):  
-  https://github.com/AI4Finance-Foundation/STAT-GR5398-Spring-2026
+  https://github.com/AI4Finance-Foundation/STAT-GR5398-Columbia-University
 
 - AI4Finance Foundation:  
   https://github.com/AI4Finance-Foundation
