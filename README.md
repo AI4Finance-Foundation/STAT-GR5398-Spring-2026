@@ -1,6 +1,5 @@
 # STAT GR5398 – MA Mentored Research (Spring 2026)  
 
-![Visitors](https://api.visitorbadge.io/api/VisitorHit?user=AI4Finance-Foundation&repo=profile&countColor=%23B17A)
 [![](https://dcbadge.limes.pink/api/server/trsr8SXpW5?cb=1)](https://discord.gg/trsr8SXpW5)
 
 ## AI4Finance Open-Source Research Track
